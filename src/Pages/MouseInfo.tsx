@@ -6,7 +6,11 @@ const MouseInfo = () => {
 
   console.log(mousePosition);
 
-  return <div>Move your mouse</div>;
+  return (
+    <div>
+      x: {mousePosition.x} y: {mousePosition.y}
+    </div>
+  );
 };
 
 export default MouseInfo;

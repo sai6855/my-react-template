@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Pages/HomePage";
 import InfiniteScroll from "./Pages/InfiniteScroll";
@@ -8,6 +8,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <div style={{ margin: "1rem" }}>
+          <Link to="/">HomePage</Link>
+        </div>
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/infinte-scroll" element={<InfiniteScroll />} />
