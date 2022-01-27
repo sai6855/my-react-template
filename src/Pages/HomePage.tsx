@@ -8,6 +8,7 @@ const HomePage = () => {
         {/* <Link to="/">Home</Link> */}
         <Link to="/infinte-scroll">InfiniteScroll</Link>
         <Link to="/mouse-position">Mouse info</Link>
+        <Link to="/debounce">Debounce</Link>
       </AddPropstochild>
     </div>
   );
