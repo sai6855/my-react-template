@@ -6,9 +6,9 @@ const HomePage = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <AddPropstochild style={{ margin: "0.5rem", padding: "0.5rem" }}>
-        <Link to="/infinte-scroll">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/infinte-scroll">InfiniteScroll</Link>
-        <Link to="/infinte-scroll">Mouse info</Link>
+        <Link to="/mouse-position">Mouse info</Link>
       </AddPropstochild>
     </div>
   );
