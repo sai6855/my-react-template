@@ -31,8 +31,6 @@ const InfiniteScroll = () => {
     //eslint-disable-next-line
   }, [isVisible]);
 
-  console.log(isVisible);
-
   return (
     <div
       style={{

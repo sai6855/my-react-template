@@ -1,8 +1,7 @@
 import React, { ReactElement } from "react";
 
 interface Params {
-  // This needs to match the other declared keys and values
-  [key: string]: object;
+  [key: string]: any;
 
   children: JSX.Element | JSX.Element[];
 }
@@ -12,7 +11,6 @@ function AddPropstochild({ children, ...rest }: Params) {
     <>
       {React.Children.map(children, (child) => {
         if (!child || ["string", "number", "boolean"].includes(typeof child)) {
-          console.log(typeof child, rest);
           return child;
         }
 
@@ -21,10 +19,5 @@ function AddPropstochild({ children, ...rest }: Params) {
     </>
   );
 }
-
-// const AddPropstochild = (: {
-//   children: JSX.Element | JSX.Element[];
-// }) => {
-// };
 
 export default AddPropstochild;
