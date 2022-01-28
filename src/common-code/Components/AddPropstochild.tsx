@@ -11,8 +11,10 @@ function AddPropstochild({ children, ...rest }: Params) {
   return (
     <>
       {React.Children.map(children, (child) => {
-        if (!child || ["string", "number", "boolean"].includes(typeof child))
+        if (!child || ["string", "number", "boolean"].includes(typeof child)) {
+          console.log(typeof child, rest);
           return child;
+        }
 
         return React.cloneElement(child as ReactElement, rest);
       })}

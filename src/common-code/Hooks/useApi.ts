@@ -12,37 +12,24 @@ const defaultState: DefaultState = {
   data: null,
 };
 
-type Options = {
-  payload?: any;
-  onSuccess?: (data: any) => any;
-};
+const useApi = (
+  initialValue: any
+): [DefaultState, (asyncFunction: any, ...args: any) => void] => {
+  const [state, setState] = React.useState({
+    ...defaultState,
+    data: initialValue,
+  });
 
-const useApi = (): [
-  DefaultState,
-  (asyncFunction: any, options?: Options) => void
-] => {
-  const [state, setState] = React.useState(defaultState);
-
-  const callApi = useCallback(async (asyncFunction: any, options?: Options) => {
+  const callApi = useCallback(async (asyncFunction: any, ...args) => {
     setState((previousState) => ({ ...previousState, status: "loading" }));
 
     try {
-      const response = await asyncFunction(options?.payload);
-
-      if (options?.onSuccess) {
-        const newData = options.onSuccess(response);
-        setState((previousState) => ({
-          ...previousState,
-          data: newData,
-          status: "success",
-        }));
-      } else {
-        setState((previousState) => ({
-          ...previousState,
-          data: response,
-          status: "success",
-        }));
-      }
+      const response = await asyncFunction(...args);
+      setState((previousState) => ({
+        ...previousState,
+        data: response,
+        status: "success",
+      }));
     } catch (error) {
       setState((previousState) => ({
         ...previousState,

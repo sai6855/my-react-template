@@ -1,6 +1,8 @@
 import axios from "axios";
-import React from "react";
+import { useState } from "react";
+import AddPropstochild from "../common-code/Components/AddPropstochild";
 import useApi from "../common-code/Hooks/useApi";
+import useDebounce from "../common-code/Hooks/useDebounce";
 
 type Item = {
   completed: boolean;
@@ -10,27 +12,38 @@ type Item = {
 };
 
 const DebounceExample = () => {
-  const [data, dispatch] = useApi();
+  const [data, dispatch] = useApi([]);
 
-  const fetchData = () =>
-    axios.get("https://jsonplaceholder.typicode.com/todos");
+  const [value, setValue] = useState("");
 
-  console.log(data);
+  useDebounce(
+    () => {
+      dispatch(fetchData, value);
+    },
+    2000,
+    [value]
+  );
+
+  const fetchData = async (value: string) => {
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/todos`
+    );
+    return value
+      ? response.data.filter((item: Item) => item.title.includes(value))
+      : [];
+  };
 
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <input
-        onChange={(e) =>
-          dispatch(fetchData, {
-            onSuccess: (res) =>
-              res.data.filter((item: Item) =>
-                item.title.includes(e.target.value)
-              ),
-          })
-        }
-      />
+      <input value={value} onChange={(e) => setValue(e.target.value)} />
+
+      <AddPropstochild style={{ margin: "1rem" }}>
+        {data.data.map((item: Item) => (
+          <div key={item.id}> {item.title} </div>
+        ))}
+      </AddPropstochild>
     </div>
   );
 };
