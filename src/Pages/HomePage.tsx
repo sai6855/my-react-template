@@ -9,6 +9,7 @@ const HomePage = () => {
         <Link to="/infinte-scroll">InfiniteScroll</Link>
         <Link to="/mouse-position">Mouse info</Link>
         <Link to="/debounce">Debounce</Link>
+        <Link to="/cache">Cache</Link>
       </AddPropstochild>
     </div>
   );
