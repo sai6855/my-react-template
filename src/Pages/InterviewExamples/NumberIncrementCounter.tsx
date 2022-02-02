@@ -7,7 +7,12 @@ const NumberIncrementCounter = () => {
   const [timer, setTimer] = React.useState(0);
   const [start, setStart] = React.useState(false);
 
-  const handleStart = () => setStart(true);
+  const handleReset = () => {
+    setCount(0);
+    setDuration(0);
+    setTimer(0);
+    setCountUI(0);
+  };
 
   useEffect(() => {
     let timerInt: NodeJS.Timer;
@@ -55,16 +60,19 @@ const NumberIncrementCounter = () => {
           }}
         />
 
-        <button type="submit" onClick={handleStart}>
+        <button
+          type="submit"
+          onClick={() => {
+            setStart(true);
+            handleReset();
+          }}
+        >
           start
         </button>
         <button
           onClick={() => {
             setStart(false);
-            setCount(0);
-            setDuration(0);
-            setTimer(0);
-            setCountUI(0);
+            handleReset();
           }}
         >
           reset
