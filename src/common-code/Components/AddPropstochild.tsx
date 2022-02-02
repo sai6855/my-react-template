@@ -14,7 +14,10 @@ function AddPropstochild({ children, ...rest }: Params) {
           return child;
         }
 
-        return React.cloneElement(child as ReactElement, rest);
+        return React.cloneElement(child as ReactElement, {
+          ...rest,
+          style: { ...(child.props.style || {}), ...(rest.style || {}) },
+        });
       })}
     </>
   );

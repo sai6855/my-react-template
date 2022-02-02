@@ -5,6 +5,7 @@ import CachePage from "./Pages/CachePage";
 import DebounceExample from "./Pages/DebounceExample";
 import HomePage from "./Pages/HomePage";
 import InfiniteScroll from "./Pages/InfiniteScroll";
+import NumberIncrementCounter from "./Pages/InterviewExamples/NumberIncrementCounter";
 import MouseInfo from "./Pages/MouseInfo";
 
 function App() {
@@ -21,7 +22,10 @@ function App() {
             <Route path="/infinte-scroll" element={<InfiniteScroll />} />
             <Route path="/mouse-position" element={<MouseInfo />} />
             <Route path="/debounce" element={<DebounceExample />} />
-            <Route path="/cache" element={<CachePage />} />
+            <Route
+              path="/number-increment-counter"
+              element={<NumberIncrementCounter />}
+            />
           </Routes>
         </BrowserRouter>
       </div>

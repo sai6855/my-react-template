@@ -20,7 +20,7 @@ const DebounceExample = () => {
     () => {
       dispatch(fetchData, value);
     },
-    2000,
+    500,
     [value]
   );
 
