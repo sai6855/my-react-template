@@ -21,19 +21,21 @@ const NumberIncrementCounter = () => {
     if (start) {
       timerInt = setInterval(() => {
         setTimer((prevTimer) =>
-          prevTimer === duration ? prevTimer : prevTimer + 1
+          prevTimer === duration ? duration : prevTimer + 1
         );
       }, 1000);
 
       countInt = setInterval(() => {
         setCountUI((prevCount) =>
-          count === prevCount ? prevCount : prevCount + 1
+          count === prevCount ? count : prevCount + 1
         );
       }, 1000 * (duration / count));
     }
 
     return () => {
       if (timerInt) clearInterval(timerInt);
+      setTimer(0);
+      setCountUI(0);
       if (countInt) clearInterval(countInt);
     };
   }, [start, duration, count]);
@@ -64,7 +66,6 @@ const NumberIncrementCounter = () => {
           type="submit"
           onClick={() => {
             setStart(true);
-            handleReset();
           }}
         >
           start
