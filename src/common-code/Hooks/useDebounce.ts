@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 
 const useDebounce = (
   callback: () => void,
-  timeout: number,
-  dependencies: any[]
+  dependencies: any[],
+  timeout: number = 500
 ) => {
   const ref = useRef(false);
 

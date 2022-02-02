@@ -17,6 +17,7 @@ const NumberIncrementCounter = () => {
   useEffect(() => {
     let timerInt: NodeJS.Timer;
     let countInt: NodeJS.Timer;
+    let resetIntervals: NodeJS.Timeout;
 
     if (start) {
       timerInt = setInterval(() => {
@@ -30,6 +31,11 @@ const NumberIncrementCounter = () => {
           count === prevCount ? count : prevCount + 1
         );
       }, 1000 * (duration / count));
+
+      setTimeout(() => {
+        clearInterval(countInt);
+        clearInterval(timerInt);
+      }, 1000 * duration);
     }
 
     return () => {
@@ -37,6 +43,7 @@ const NumberIncrementCounter = () => {
       setTimer(0);
       setCountUI(0);
       if (countInt) clearInterval(countInt);
+      if (resetIntervals) clearTimeout(resetIntervals);
     };
   }, [start, duration, count]);
 

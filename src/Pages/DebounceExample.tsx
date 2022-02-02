@@ -20,8 +20,8 @@ const DebounceExample = () => {
     () => {
       dispatch(fetchData, value);
     },
+    [value],
     500,
-    [value]
   );
 
   const fetchData = async (value: string) => {
