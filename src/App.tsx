@@ -1,7 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CacheProvider from "./common-code/Hooks/Cache/CacheProvider";
-import CachePage from "./Pages/CachePage";
+//import CachePage from "./Pages/CachePage";
 import DebounceExample from "./Pages/DebounceExample";
 import HomePage from "./Pages/HomePage";
 import InfiniteScroll from "./Pages/InfiniteScroll";
