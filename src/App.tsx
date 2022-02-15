@@ -3,6 +3,7 @@ import "./App.css";
 import CacheProvider from "./common-code/Hooks/Cache/CacheProvider";
 //import CachePage from "./Pages/CachePage";
 import DebounceExample from "./Pages/DebounceExample";
+import EventDelegation from "./Pages/EventDelegation";
 import HomePage from "./Pages/HomePage";
 import InfiniteScroll from "./Pages/InfiniteScroll";
 import NumberIncrementCounter from "./Pages/InterviewExamples/NumberIncrementCounter";
@@ -26,6 +27,7 @@ function App() {
               path="/number-increment-counter"
               element={<NumberIncrementCounter />}
             />
+            <Route path="/event-delegation" element={<EventDelegation />} />
           </Routes>
         </BrowserRouter>
       </div>

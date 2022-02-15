@@ -20,6 +20,7 @@ const HomePage = () => {
 
           <Link to="/number-increment-counter">number-increment-counter</Link>
         </div>
+        <Link to="/event-delegation">event-delegation/ event-bubling</Link>
       </AddPropstochild>
     </div>
   );
