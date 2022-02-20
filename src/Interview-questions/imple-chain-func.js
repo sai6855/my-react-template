@@ -1,19 +1,19 @@
 class Artithmetic {
   constructor(initialvalue = 0) {
     this.value = initialvalue;
-    this.add = function add(num) {
+    this.add = function(num) {
       this.value += num;
       return this;
     };
-    this.subtract = function subtract(num) {
+    this.subtract = function(num) {
       this.value -= num;
       return this;
     };
-    this.multiply = function multiply(num) {
+    this.multiply = function(num) {
       this.value = this.value * num;
       return this;
     };
-    this.divide = function divide(num) {
+    this.divide = function(num) {
       this.value = this.value / num;
       return this;
     };
@@ -21,5 +21,10 @@ class Artithmetic {
   }
 }
 
-const a = new Artithmetic(10);
-console.log(a.add(10).add(10).value);
+const arithmatic = new Artithmetic(10);
+console.log(
+  arithmatic
+    .add(10)
+    .add(10)
+    .subtract(30).value
+);

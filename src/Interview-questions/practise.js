@@ -1,21 +1,24 @@
-const obj = {
-  name: "sai",
-  displayName: function() {
-    console.log(this.name);
-  },
+import React from "react";
 
-  thisArrow: () => {
-    console.log(this);
-  },
-  thisFunction: function() {
-    console.log(this);
-  },
-};
+function Practise() {
+  const obj = {
+    name: "sai",
+    displayName: function() {
+      console.log(this.name);
+    },
 
-const obj2 = {
-  name: "sais",
-};
+    context: function() {
+      console.log(this);
+    },
+  };
 
-obj.displayName.call(obj2);
-obj.thisArrow();
-obj.thisFunction()
+  const obj2 = {
+    name: "sais",
+  };
+
+  obj.displayName.call(obj2);
+
+  return null;
+}
+
+export default Practise;

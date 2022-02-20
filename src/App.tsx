@@ -1,6 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CacheProvider from "./common-code/Hooks/Cache/CacheProvider";
+import Practise from "./Interview-questions/practise";
 //import CachePage from "./Pages/CachePage";
 import DebounceExample from "./Pages/DebounceExample";
 import EventDelegation from "./Pages/EventDelegation";
@@ -28,6 +29,7 @@ function App() {
               element={<NumberIncrementCounter />}
             />
             <Route path="/event-delegation" element={<EventDelegation />} />
+            <Route path="/practise" element={<Practise />} />
           </Routes>
         </BrowserRouter>
       </div>
