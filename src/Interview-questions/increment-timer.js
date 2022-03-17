@@ -8,7 +8,7 @@ const timer = (value, increment) => {
     }, 1000);
   };
 
-
+  <div  ></div>;
 
   const stopTimer = () => {
     clearInterval(internalFunc);
@@ -29,3 +29,5 @@ const timer = (value, increment) => {
 const timerObj = timer(10, 10);
 timerObj.startTimer();
 timerObj.pauseTimer(5000, 2000);
+
+<meter  ></meter>
