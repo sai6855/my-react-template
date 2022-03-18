@@ -1,17 +1,23 @@
-const initialState = {
-  data: [{ id: 1, title: "Hello" }],
+const todosState = {
+  todos: [],
 };
 
-const initialState2 = {
-  data2: [{ id: 2, title: "Hello" }],
+const usersState = {
+  users: [],
 };
 
-const reducerFunc = (state = initialState, action) => {
+const todosReducer = (state = todosState, action) => {
   switch (action.type) {
-    case "ADD_DATA":
+    case "ADD_TODO":
       return {
         ...state,
-        data: [...state.data, action.payload],
+        todos: [...state.todos, action.payload],
+      };
+
+    case "DELETE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.payload),
       };
 
     default:
@@ -19,12 +25,18 @@ const reducerFunc = (state = initialState, action) => {
   }
 };
 
-const reducerFunc2 = (state = initialState2, action) => {
+const usersReducer = (state = usersState, action) => {
   switch (action.type) {
-    case "ADD_DATA_2":
+    case "ADD_USER":
       return {
         ...state,
-        data2: [...state.data2, action.payload],
+        users: [...state.users, action.payload],
+      };
+
+    case "DELETE_USER":
+      return {
+        ...state,
+        users: state.users.filter((todo) => todo.id !== action.payload),
       };
 
     default:
@@ -33,7 +45,6 @@ const reducerFunc2 = (state = initialState2, action) => {
 };
 
 module.exports = {
-  reducerFunc,
-  initialState,
-  reducerFunc2,
+  todosReducer,
+  usersReducer,
 };

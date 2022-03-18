@@ -22,6 +22,7 @@ const HomePage = () => {
         </div>
         <Link to="/event-delegation">event-delegation/ event-bubling</Link>
         <Link to="/practise">practise</Link>
+        <Link to="/custom-redux">Custom-Redux</Link>
       </AddPropstochild>
     </div>
   );
