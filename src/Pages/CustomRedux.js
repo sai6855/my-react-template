@@ -16,6 +16,18 @@ const CustomRedux = () => {
 
   const firstNameRef = useRef();
 
+  const todoThunk = () => async (dispatch) => {
+    let response = await fetch(
+      "https://jsonplaceholder.typicode.com/todos/" + (id || 1)
+    );
+    response = await response.json();
+
+    dispatch({
+      type: "ADD_TODO",
+      payload: { todo: response.title, id: Math.random().toString() },
+    });
+  };
+
   return (
     <>
       <div>
@@ -30,6 +42,7 @@ const CustomRedux = () => {
               payload: Object.fromEntries(formData),
             });
             formRef.current.reset();
+            dispatch(todoThunk());
           }}
         >
           <input type="text" name="todo" placeholder="todo" />

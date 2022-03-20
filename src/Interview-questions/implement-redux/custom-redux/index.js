@@ -4,6 +4,14 @@ const createStore = (reducerFunc) => {
 
   const getState = () => state;
   const dispatch = (action) => {
+    if (!action) return;
+    if (typeof action === "function") {
+      if (action && action[Symbol.toStringTag] === "AsyncFunction") {
+        action(dispatch);
+      }
+      return;
+    }
+
     state = reducerFunc(state, action);
     listeners.forEach((listener) => {
       listener();

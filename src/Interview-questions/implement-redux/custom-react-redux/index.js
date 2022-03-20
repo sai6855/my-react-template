@@ -12,12 +12,10 @@ export const Provider = ({ store, children }) => {
 
 export const useSelector = () => {
   const store = useContext(Context);
-
   return store.getState();
 };
 
 export const useDispatch = () => {
   const store = useContext(Context);
-
   return store.dispatch;
 };
