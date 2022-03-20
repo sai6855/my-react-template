@@ -3,8 +3,16 @@ const createStore = (reducerFunc) => {
   const listeners = [];
 
   const getState = () => state;
+
   const dispatch = (action) => {
     if (!action) return;
+
+    const acceptedTypes = ["object", "function"];
+
+    if (!acceptedTypes.includes(typeof action)) {
+      return;
+    }
+
     if (typeof action === "function") {
       if (action && action[Symbol.toStringTag] === "AsyncFunction") {
         action(dispatch);
