@@ -5,6 +5,7 @@ import Practise from "./Interview-questions/practise";
 import CustomRedux from "./Pages/CustomRedux";
 //import CachePage from "./Pages/CachePage";
 import DebounceExample from "./Pages/DebounceExample";
+import DetectOutside from "./Pages/DetectOutside";
 import EventDelegation from "./Pages/EventDelegation";
 import HomePage from "./Pages/HomePage";
 import InfiniteScroll from "./Pages/InfiniteScroll";
@@ -32,6 +33,7 @@ function App() {
             <Route path="/event-delegation" element={<EventDelegation />} />
             <Route path="/practise" element={<Practise />} />
             <Route path="/custom-redux" element={<CustomRedux />} />
+            <Route path="/detect-click-outside" element={<DetectOutside />} />
           </Routes>
         </BrowserRouter>
       </div>
