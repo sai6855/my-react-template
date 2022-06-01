@@ -11,6 +11,7 @@ import HomePage from "./Pages/HomePage";
 import InfiniteScroll from "./Pages/InfiniteScroll";
 import NumberIncrementCounter from "./Pages/InterviewExamples/NumberIncrementCounter";
 import MouseInfo from "./Pages/MouseInfo";
+import Scroll from "./Pages/Scroll";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/practise" element={<Practise />} />
             <Route path="/custom-redux" element={<CustomRedux />} />
             <Route path="/detect-click-outside" element={<DetectOutside />} />
+            <Route path="/scroll" element={<Scroll />} />
           </Routes>
         </BrowserRouter>
       </div>

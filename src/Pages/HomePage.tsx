@@ -24,6 +24,7 @@ const HomePage = () => {
         <Link to="/practise">practise</Link>
         <Link to="/custom-redux">Custom-Redux</Link>
         <Link to="/detect-click-outside">detect-click-outside</Link>
+        <Link to="/scroll">scroll</Link>
       </AddPropstochild>
     </div>
   );
